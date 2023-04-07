@@ -7,7 +7,6 @@ const empNameBox = document.querySelector('#emplyeeName');
 const basicSalary = document.querySelector('#empSalary')
 
 let empNameValue = empNameBox.value
-let empBasicSalary = +basicSalary.value
 
 
 
@@ -26,6 +25,7 @@ const emaGrossSalary = document.getElementById('empGrossSalary')
 
 function calSalary(d, h) {
 
+    let empBasicSalary = +basicSalary.value
 
     let da = d;
     let hra = h;
@@ -43,7 +43,6 @@ function calSalary(d, h) {
     emaGrossSalary.innerText = `${totalSalary} Rs`
 
 
-    console.log(empBasicSalary)
 
 
 
@@ -53,33 +52,31 @@ function grossSalary() {
     // let empIdValue = empID.value
     // let empNameValue = empNameBox.value
     // let empBasicSalary = +basicSalary.value
+    let empBasicSalary = +basicSalary.value
 
     if (empBasicSalary >= 10000 && empBasicSalary <= 20000) {
+
         calSalary(5, 0);
+
+        console.log(empBasicSalary)
 
 
     } else if (empBasicSalary >= 20000 && empBasicSalary <= 30000) {
+
         calSalary(5, 5);
 
-
-
-
     } else if (empBasicSalary >= 30000 && empBasicSalary <= 40000) {
+
         calSalary(10, 5);
 
 
-
-
     } else if (empBasicSalary >= 40000 && empBasicSalary <= 50000) {
+
         calSalary(15, 10);
 
-
-
-
     } else if (empBasicSalary >= 50000) {
+
         calSalary(15, 15);
-
-
 
 
     } else {
@@ -87,6 +84,8 @@ function grossSalary() {
     }
 
 }
+
+console.log(grossSalary())
 
 function printBill() {
     document.getElementById('empSalary').style.display = "none";
